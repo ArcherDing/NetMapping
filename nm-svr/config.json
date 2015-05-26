@@ -1,0 +1,28 @@
+{
+    "Protocol"   : "Tcp",
+    "Listen"     : "0.0.0.0:8018",
+    "LogFile"    : "nm-svr.log",
+    "NetMapList" : [
+          {
+               "Protocol" : "Tcp/Cli2Svr",
+               "From"     : "172.28.197.1:*",
+               "To"       : "172.28.197.155:8020",
+               "Listen"   : "0.0.0.0:9000",
+               "LogFile"  : "1-155.log"
+          },
+          {
+               "Protocol" : "Tcp/Cli2Svr",
+               "From"     : "172.28.197.121:*",
+               "To"       : "172.28.25.68:8020",
+               "Listen"   : "0.0.0.0:9001",
+               "LogFile"  : "121-68.log"
+          },
+          {
+               "Protocol" : "Tcp/Cli2Svr",
+               "From"     : "172.28.197.155:*",
+               "To"       : "172.28.197.1:8020",
+               "Listen"   : "0.0.0.0:9002",
+               "LogFile"  : "155-1.log"
+          }
+    ]  
+}
