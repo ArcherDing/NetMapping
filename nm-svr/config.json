@@ -1,6 +1,6 @@
 {
-    "Protocol"   : "Tcp",
-    "Listen"     : "0.0.0.0:8018",
+    "Protocol"   : "Restful",
+    "Listen"     : "0.0.0.0:8080",
     "LogFile"    : "nm-svr.log",
     "NetMapList" : [
           {

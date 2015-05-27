@@ -7,29 +7,20 @@ import (
 	"os"
 )
 
-type NetMap struct {
-	Protocol string
-	From     string
-	To       string
-	Listen   string
-	LogFile  string
-}
-
-type SvrConfig struct {
+type CliConfig struct {
 	configfile string
 	Protocol   string
-	Listen     string
+	Server     string
 	LogFile    string
-	NetMapList []NetMap
 }
 
-func NewSvrConfig(configfile string) *SvrConfig {
-	return &SvrConfig{
+func NewCliConfig(configfile string) *CliConfig {
+	return &CliConfig{
 		configfile: configfile,
 	}
 }
 
-func (self *SvrConfig) LoadConfig() error {
+func (self *CliConfig) LoadConfig() error {
 	file, err := os.Open(self.configfile)
 	if err != nil {
 		log.Printf(err.Error())
@@ -46,6 +37,6 @@ func (self *SvrConfig) LoadConfig() error {
 	return nil
 }
 
-func (self *SvrConfig) DumpConfig() {
+func (self *CliConfig) DumpConfig() {
 	fmt.Printf("%v", self)
 }
